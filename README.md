@@ -4,9 +4,10 @@ Group profile website
 <html lang="en">
  <h3>🎯 interests</h3>
 <ul class="interests-list">
-    <li>🎨 digital painting</li>
+    <li>🎨 Digital painting</li>
     <li>📸 Photograph</li>
-    <li>⚽ soccer</li>
+    <li>⚽ Soccer</li>
+    <li>👾 Codes</li>
     </ul>
   </div>
 </div>
