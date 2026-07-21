@@ -12,7 +12,7 @@ Group profile website
 </div>
  <!-- PETS SECTION - REPLICABLE BLOCK (each pet as a card) -->
   <div class="pets-collection">
- <h3>🐾 pets <span class="hint-text">(copy this whole .pet-card to add more)</span></h3>
+ <h3>🐾 pets <span class="hint-text"
  <!-- PET CARD 1 - Princess -->
  <div class="pet-card">
     <div class="pet-img emoji-pet">🐢</div>
