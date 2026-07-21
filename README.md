@@ -39,7 +39,3 @@ Group profile website
        </div>
  </section>
 
-            <!-- ============================================================= -->
-            <!-- SECOND PERSON: JANE (filled by Johnny / Austin)              -->
-            <!-- INSERT CODE BELOW THE NEXT LINE -->
-            <!-- ============================================================= -->
