@@ -11,6 +11,16 @@ Group profile website
     </ul>
   </div>
 </div>
+  <h3>🏹 Hobbies</h3>
+<ul class="hobbies-list">
+    <li>🕹️ Videogames</li>
+    <li>🎨 Draw or paint</li>
+    <li>🎭 Theater</li>
+    <li>🧑‍🍳 Cook</li>
+    <li>📚 Books </li>
+    </ul>
+  </div>
+</div>
  <!-- PETS SECTION - REPLICABLE BLOCK (each pet as a card) -->
   <div class="pets-collection">
  <h3>🐾 pets <span class="hint-text"
