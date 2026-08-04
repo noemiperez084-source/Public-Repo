@@ -18,7 +18,7 @@ export const profile: Profile = {
   tagline: "Fashion Designer | Photographer | Photo & Video Editor",
   roles: ["Fashion Designer", "Photographer", "Content Creator"],
   avatar: {
-    src: "/images/1F938409-2DC1-417F-91E4-B2D9ECB8FA5Amayra.jpg",
+    src: "/images/1F938409-2DC1-417F-91E4-B2D9ECB8FA5A.jpg",
     alt: "Photo of Mayra",
   },
   about:
