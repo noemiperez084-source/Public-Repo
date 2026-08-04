@@ -14,7 +14,7 @@ function useInView<T extends HTMLElement>() {
           obs.disconnect();
         }
       },
-      { threshold: 0.15 }
+      { threshold: 0.12 }
     );
     obs.observe(el);
     return () => obs.disconnect();
@@ -23,123 +23,134 @@ function useInView<T extends HTMLElement>() {
 }
 
 function Section({
+  id,
   emoji,
   title,
-  children,
   delay = 0,
+  children,
 }: {
+  id: string;
   emoji: string;
   title: string;
-  children: React.ReactNode;
   delay?: number;
+  children: React.ReactNode;
 }) {
   const { ref, inView } = useInView<HTMLDivElement>();
   return (
-    <div
+    <section
+      id={id}
       ref={ref}
-      className={`section-block ${inView ? "reveal" : ""}`}
+      className={`section ${inView ? "reveal" : ""}`}
       style={{ transitionDelay: `${delay}ms` }}
     >
-      <h3 className="section-title">
+      <h2 className="section-title">
         <span className="section-emoji">{emoji}</span>
         {title}
-      </h3>
+      </h2>
       {children}
-    </div>
-  );
-}
-
-function ChipList({ items }: { items: { emoji: string; label: string }[] }) {
-  return (
-    <ul className="chip-list">
-      {items.map((item, i) => (
-        <li key={i} className="chip" style={{ animationDelay: `${i * 60}ms` }}>
-          <span className="chip-emoji">{item.emoji}</span>
-          <span className="chip-label">{item.label}</span>
-        </li>
-      ))}
-    </ul>
+    </section>
   );
 }
 
 export default function ProfileCard({ profile }: { profile: Profile }) {
-  const { ref, inView } = useInView<HTMLElement>();
+  const hero = useInView<HTMLElement>();
 
   return (
-    <section
-      ref={ref}
-      id={`person-${profile.id}`}
-      className={`person-card ${inView ? "reveal" : ""}`}
-    >
-      <div className="card-glow" aria-hidden="true" />
+    <article ref={hero.ref} className={`hero ${hero.inView ? "reveal" : ""}`}>
+      <div className="hero-glow" aria-hidden="true" />
 
-      <div className="avatar-zone">
-        <div className="avatar-ring">
-          <div className="avatar-icon">{profile.emoji}</div>
+      <div className="hero-top">
+        <div className="avatar-frame">
+          <img
+            src={profile.avatar.src}
+            alt={profile.avatar.alt}
+            className="avatar-img"
+            loading="eager"
+          />
+          <div className="avatar-ring" aria-hidden="true" />
         </div>
-        <div className="avatar-choice-badge">⚡ {profile.avatarStyle}</div>
+
+        <div className="hero-intro">
+          <h1 className="hero-name">
+            <span className="hero-emoji">🌟</span> {profile.name}
+          </h1>
+          <p className="hero-tagline">{profile.tagline}</p>
+          <div className="role-pills">
+            {profile.roles.map((r) => (
+              <span key={r} className="role-pill">
+                {r}
+              </span>
+            ))}
+          </div>
+        </div>
       </div>
 
-      <div className="person-details">
-        <h2 className="person-name">
-          {profile.name} <span className="username">{profile.handle}</span>
-        </h2>
+      <Section id="about" emoji="🙋" title="About Me" delay={60}>
+        <p className="about-text">{profile.about}</p>
+      </Section>
 
-        <div className="username-list">
-          {profile.usernames.map((u) => (
-            <span key={u.label} className="username-badge">
-              <span className="badge-label">{u.label}</span>
-              <span className="badge-value">{u.value}</span>
-            </span>
+      <Section id="skills" emoji="💻" title="Skills" delay={120}>
+        <ul className="skill-list">
+          {profile.skills.map((s, i) => (
+            <li
+              key={s.label}
+              className="skill-row"
+              style={{ animationDelay: `${i * 100}ms` }}
+            >
+              <span className="skill-emoji">{s.emoji}</span>
+              <span className="skill-label">{s.label}</span>
+              <div className="skill-bar-wrap">
+                <div
+                  className="skill-bar-fill"
+                  style={{ width: `${s.level}%` }}
+                />
+              </div>
+              <span className="skill-pct">{s.level}%</span>
+            </li>
+          ))}
+        </ul>
+      </Section>
+
+      <Section id="projects" emoji="📁" title="Projects" delay={180}>
+        <div className="project-grid">
+          {profile.projects.map((p, i) => (
+            <article
+              key={p.title}
+              className="project-card"
+              style={{ animationDelay: `${i * 100}ms` }}
+            >
+              <div className="project-emoji">{p.emoji}</div>
+              <div className="project-body">
+                <div className="project-head">
+                  <h3 className="project-title">{p.title}</h3>
+                  <span className="project-tag">{p.tag}</span>
+                </div>
+                <p className="project-desc">{p.desc}</p>
+              </div>
+            </article>
           ))}
         </div>
+      </Section>
 
-        <Section emoji="🌱" title="aspirations" delay={80}>
-          <p className="aspiration-text">{profile.aspiration}</p>
-        </Section>
-
-        <Section emoji="🎯" title="interests" delay={140}>
-          <ChipList items={profile.interests} />
-        </Section>
-
-        <Section emoji="😶‍🌫️" title="hobby" delay={200}>
-          <ChipList items={profile.hobbies} />
-        </Section>
-
-        <Section emoji="🙇🤸" title="work experience" delay={260}>
-          <ChipList items={profile.workExperience} />
-        </Section>
-
-        <Section emoji="🔊" title="high school clubs" delay={320}>
-          <ChipList items={profile.clubs} />
-        </Section>
-
-        {profile.pets.length > 0 && (
-          <Section emoji="🐾" title="pets" delay={380}>
-            <div className="pets-collection">
-              {profile.pets.map((pet, i) => (
-                <div key={i} className="pet-card">
-                  <div className="pet-img">{pet.emoji}</div>
-                  <div className="pet-info">
-                    <div className="pet-name">{pet.name}</div>
-                    <div className="pet-type">{pet.type}</div>
-                    <div className="pet-color">{pet.color}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </Section>
-        )}
-
-        <div className="footer-row">
-          <Section emoji="🛠️" title="tiny toolkit" delay={440}>
-            <p className="toolkit-text">{profile.toolkit}</p>
-          </Section>
-          <Section emoji="🌍" title="languages" delay={500}>
-            <p className="toolkit-text">{profile.languages.join(" · ")}</p>
-          </Section>
+      <Section id="contact" emoji="📩" title="Contact" delay={240}>
+        <div className="contact-grid">
+          {profile.contacts.map((c) => (
+            <a
+              key={c.label}
+              href={c.href}
+              target={c.href.startsWith("http") ? "_blank" : undefined}
+              rel={c.href.startsWith("http") ? "noopener noreferrer" : undefined}
+              className="contact-card"
+            >
+              <span className="contact-emoji">{c.emoji}</span>
+              <span className="contact-info">
+                <span className="contact-label">{c.label}</span>
+                <span className="contact-value">{c.value}</span>
+              </span>
+            </a>
+          ))}
         </div>
-      </div>
-    </section>
+      </Section>
+    </article>
   );
 }

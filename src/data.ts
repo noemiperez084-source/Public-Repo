@@ -1,90 +1,79 @@
+export type Skill = { emoji: string; label: string; level: number };
+export type Project = { emoji: string; title: string; desc: string; tag: string };
+export type Contact = { emoji: string; label: string; value: string; href: string };
+
 export type Profile = {
-  id: string;
   name: string;
-  handle: string;
-  emoji: string;
-  avatarStyle: string;
-  usernames: { label: string; value: string }[];
-  aspiration: string;
-  interests: { emoji: string; label: string }[];
-  hobbies: { emoji: string; label: string }[];
-  workExperience: { emoji: string; label: string }[];
-  clubs: { emoji: string; label: string }[];
-  pets: { emoji: string; name: string; type: string; color: string }[];
-  languages: string[];
-  toolkit: string;
+  tagline: string;
+  roles: string[];
+  avatar: { src: string; alt: string };
+  about: string;
+  skills: Skill[];
+  projects: Project[];
+  contacts: Contact[];
 };
 
-export const profiles: Profile[] = [
-  {
-    id: "mayra",
-    name: "Mayra",
-    handle: "@creative_mayra",
-    emoji: "🧟",
-    avatarStyle: "icon (animated)",
-    usernames: [
-      { label: "discord", value: "Ayri_art" },
-      { label: "github", value: "mayra-builds" },
-      { label: "ig", value: "@mayra.draws" },
-    ],
-    aspiration:
-      "Learn a little bit of everything in this life — and if I don't, invent it ✨ and enjoy life as my grandmi taught me 💛",
-    interests: [
-      { emoji: "🙈", label: "Fashion designer" },
-      { emoji: "🛹", label: "Skateboard" },
-      { emoji: "📸", label: "Photograph" },
-    ],
-    hobbies: [
-      { emoji: "⚽", label: "Soccer" },
-      { emoji: "🎮", label: "Video games" },
-      { emoji: "🧑‍💻", label: "Editor (photos or videos)" },
-    ],
-    workExperience: [
-      { emoji: "🤱", label: "Babysitter" },
-      { emoji: "💸", label: "Cashier" },
-    ],
-    clubs: [
-      { emoji: "📸", label: "Photography" },
-      { emoji: "🎭", label: "Theater" },
-      { emoji: "💃", label: "Dance" },
-      { emoji: "🏸", label: "Badminton" },
-    ],
-    pets: [
-      { emoji: "🐢", name: "Princess", type: "Red-eared slider", color: "green" },
-      { emoji: "🐢", name: "Dusky", type: "Red-eared slider", color: "green" },
-    ],
-    languages: ["English", "Spanish"],
-    toolkit: "Figma · Canva · HTML/CSS · Procreate",
+export const profile: Profile = {
+  name: "Mayra Guzman",
+  tagline: "Fashion Designer | Photographer | Photo & Video Editor",
+  roles: ["Fashion Designer", "Photographer", "Content Creator"],
+  avatar: {
+    src: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=600",
+    alt: "Photo of Mayra",
   },
-  {
-    id: "teammate",
-    name: "Your Name",
-    handle: "@your_handle",
-    emoji: "🌱",
-    avatarStyle: "icon (animated)",
-    usernames: [
-      { label: "discord", value: "your_discord" },
-      { label: "github", value: "your_github" },
-      { label: "ig", value: "@your_handle" },
-    ],
-    aspiration: "Add your aspirations here — what do you want to learn, build, or become?",
-    interests: [
-      { emoji: "🎨", label: "Digital painting" },
-      { emoji: "📸", label: "Photograph" },
-      { emoji: "⚽", label: "Soccer" },
-      { emoji: "👾", label: "Codes" },
-    ],
-    hobbies: [
-      { emoji: "🕹️", label: "Videogames" },
-      { emoji: "🎨", label: "Draw or paint" },
-      { emoji: "🎭", label: "Theater" },
-      { emoji: "🧑‍🍳", label: "Cook" },
-      { emoji: "📚", label: "Books" },
-    ],
-    workExperience: [{ emoji: "✨", label: "Add your experience" }],
-    clubs: [{ emoji: "✨", label: "Add your clubs" }],
-    pets: [],
-    languages: ["English"],
-    toolkit: "Add your tools",
-  },
-];
+  about:
+    "I am a creative person passionate about fashion design, photography, and digital editing. I enjoy learning new skills, creating unique projects, and expressing my ideas through art and technology.",
+  skills: [
+    { emoji: "🎨", label: "Adobe Photoshop", level: 90 },
+    { emoji: "📸", label: "Photography", level: 88 },
+    { emoji: "🎥", label: "Video Editing", level: 82 },
+    { emoji: "👗", label: "Fashion Design", level: 95 },
+    { emoji: "💻", label: "HTML & CSS", level: 70 },
+  ],
+  projects: [
+    {
+      emoji: "📷",
+      title: "Photography Portfolio",
+      desc: "A curated collection of portrait, street, and nature photography.",
+      tag: "Photography",
+    },
+    {
+      emoji: "👗",
+      title: "Fashion Design Collection",
+      desc: "Original garment designs from sketch to finished piece.",
+      tag: "Fashion",
+    },
+    {
+      emoji: "🎥",
+      title: "Video Editing Projects",
+      desc: "Short-form edits, reels, and creative video compositions.",
+      tag: "Video",
+    },
+    {
+      emoji: "💻",
+      title: "Personal Website",
+      desc: "A hand-coded portfolio site built with HTML and CSS.",
+      tag: "Web",
+    },
+  ],
+  contacts: [
+    {
+      emoji: "✉️",
+      label: "Email",
+      value: "mayra@email.com",
+      href: "mailto:mayra@email.com",
+    },
+    {
+      emoji: "🐙",
+      label: "GitHub",
+      value: "github.com/mayra-builds",
+      href: "https://github.com/mayra-builds",
+    },
+    {
+      emoji: "📸",
+      label: "Instagram",
+      value: "@mayra.draws",
+      href: "https://instagram.com/mayra.draws",
+    },
+  ],
+};
