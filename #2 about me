@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+        <title>✨ Our Collective Canvas | Person Profile Builder</title>
+        <!-- External CSS (separate styling sheet) -->
+        <link rel="stylesheet" href="./style.css">
+        <!-- Optional: simple favicon emoji style -->
+        <link rel="icon"
+            href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧑‍🤝‍🧑</text></svg>">
+    </head>
+
+    <body>
+        <header class="page-header">
+            <h1>🌟 our digital identity garden</h1>
+            <p class="subhead">clone, paste & fill — each block tells a story. add hobbies, dreams, quirks, and icons that
+                represent YOU.</p>
+            <div class="collab-note">
+                💡 <strong>collaboration workflow:</strong> each teammate copies an existing section (hobbies, interest,
+                etc.), pastes it below, and fills data with a friend's info. take turns! share screen, work live.
+            </div>
+        </header>
+        <main class="container">
+            <!-- ============================================================= -->
+            <!-- SECTION: MASTER PERSON PROFILE (Mayra's template)            -->
+            <!-- ============================================================= -->
+            <section class="person-card" id="person-mayra">
+                <div class="avatar-zone">
+                    <!-- Avatar: self-portrait OR icon / animated character -->
+                    <div class="avatar-icon animated-avatar">
+                        🧟
+                    </div>
+                    <!-- alternative: if they want to use self-portrait image, they can replace above div with an img tag -->
+                    <!-- <img class="avatar-img" src="https://placekitten.com/120/120" alt="self portrait"> -->
+                    <div class="avatar-choice-badge">
+                        ⚡ avatar style: icon (animated)
+                    </div>
+                </div>
+                <div class="person-details">
+                    <h2>mayra <span class="username">(@creative_mayra)</span></h2>
+                    <div class="username-list">
+                        <span class="username-badge">discord: Ayri_art</span>
+                        <span class="username-badge">github: mayra-builds</span>
+                        <span class="username-badge">ig: @mayra.draws</span>
+                    </div>
+                    <!-- ASPIRATIONS block (custom) -->
+                    <div class="aspiration-block">
+                        <h3>🌱 aspirations</h3>
+                        <p> Learn a little bit everything in this life and if I don't invent it✨ and enjoy life 
+                            as my grandmi taught me💛
+                        </p>
+                    </div>
+                    <!-- INTERESTS section (template block) -->
+                    <div class="interests-block">
+                        <h3>🎯 interests</h3>
+                        <ul class="interests-list">
+                            <li>🙈 Fashion designer</li>
+                            <li>🛹 Skateboard</li>
+                            <li>📸 Photograph</li>
+                        </ul>
+                    </div>
+                </div>  
+                <!-- Hobby section (template block) -->
+                    <div class="hobby-block">
+                        <h3>😶‍🌫️ hobby</h3>
+                        <ul class="hobby-list">
+                            <li>⚽ Soccer</li>
+                            <li>🎮 Video games</li>
+                            <li>🧑‍💻 Editor (photos or videos)</li>
+                        </ul>
+                    </div>
+                </div>  
+                    <!-- Work Experience section (template block) -->
+                    <div class="work experience-block">
+                        <h3>🙇🤸 work experience</h3>
+                        <ul class="work experience-list">
+                            <li>🤱 Babysitter's</li>
+                            <li>💸 Cashier</li>
+                        </ul>
+                    </div>
+                </div>  
+                 <!-- High School Clubs section (template block) -->
+                    <div class="high school clubs-block">
+                        <h3>🔊 high school clubs</h3>
+                        <ul class="high school clubs-list">
+                            <li>📸 Photography</li>
+                            <li>🎭 Theather</li>
+                            <li>💃 Dance</li>
+                            <li>🏸 Badminton</li>
+                        </ul>
+                    </div>
+                </div>  
+                <!-- extra section: "Things I build" - just to show more flexible blocks -->
+                <div class="Languages
+                    <p>English · Spanish</p>
+                </div>
+            </section>
