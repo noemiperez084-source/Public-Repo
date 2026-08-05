@@ -109,11 +109,12 @@ export default function ProfileCard({ profile }: { profile: Profile }) {
             </li>
           ))}
         </ul>
+        <p className="skills-note">{profile.skillsNote}</p>
       </Section>
 
-      <Section id="projects" emoji="📁" title="Projects" delay={180}>
+      <Section id="interests" emoji="🎯" title="Interests" delay={180}>
         <div className="project-grid">
-          {profile.projects.map((p, i) => (
+          {profile.interests.map((p, i) => (
             <article
               key={p.title}
               className="project-card"
@@ -132,7 +133,28 @@ export default function ProfileCard({ profile }: { profile: Profile }) {
         </div>
       </Section>
 
-      <Section id="contact" emoji="📩" title="Contact" delay={240}>
+      <Section id="hobbies" emoji="🙇" title="Hobbies" delay={240}>
+        <div className="project-grid">
+          {profile.hobbies.map((p, i) => (
+            <article
+              key={p.title}
+              className="project-card"
+              style={{ animationDelay: `${i * 100}ms` }}
+            >
+              <div className="project-emoji">{p.emoji}</div>
+              <div className="project-body">
+                <div className="project-head">
+                  <h3 className="project-title">{p.title}</h3>
+                  <span className="project-tag">{p.tag}</span>
+                </div>
+                <p className="project-desc">{p.desc}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </Section>
+
+      <Section id="contact" emoji="📩" title="Contact" delay={300}>
         <div className="contact-grid">
           {profile.contacts.map((c) => (
             <a

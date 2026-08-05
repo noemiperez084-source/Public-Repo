@@ -9,7 +9,9 @@ export type Profile = {
   avatar: { src: string; alt: string };
   about: string;
   skills: Skill[];
-  projects: Project[];
+  skillsNote: string;
+  interests: Project[];
+  hobbies: Project[];
   contacts: Contact[];
 };
 
@@ -30,7 +32,9 @@ export const profile: Profile = {
     { emoji: "👗", label: "Fashion Design", level: 95 },
     { emoji: "💻", label: "HTML & CSS", level: 70 },
   ],
-  projects: [
+  skillsNote:
+    "Challenge: During this technical journey, I went from not knowing anything about code to mastering HTML & CSS to structure my ideas and projects.",
+  interests: [
     {
       emoji: "📷",
       title: "Photography Portfolio",
@@ -44,9 +48,9 @@ export const profile: Profile = {
       tag: "Fashion",
     },
     {
-      emoji: "🎥",
-      title: "Video Editing Projects",
-      desc: "Short-form edits, reels, and creative video compositions.",
+      emoji: "🎭",
+      title: "Filming",
+      desc: "Creative video compositions and short-form film projects.",
       tag: "Video",
     },
     {
@@ -54,6 +58,32 @@ export const profile: Profile = {
       title: "Personal Website",
       desc: "A hand-coded portfolio site built with HTML and CSS.",
       tag: "Web",
+    },
+  ],
+  hobbies: [
+    {
+      emoji: "🛹",
+      title: "Skateboard",
+      desc: "Cruising streets and learning new tricks.",
+      tag: "Active",
+    },
+    {
+      emoji: "⚽",
+      title: "Soccer",
+      desc: "Team play and friendly matches.",
+      tag: "Sport",
+    },
+    {
+      emoji: "🎮",
+      title: "Videogames",
+      desc: "Exploring virtual worlds and competitive play.",
+      tag: "Gaming",
+    },
+    {
+      emoji: "🧶",
+      title: "Handicrafts & Accessory Design",
+      desc: "Handmade accessories and creative craft projects.",
+      tag: "Craft",
     },
   ],
   contacts: [
