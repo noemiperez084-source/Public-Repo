@@ -44,7 +44,7 @@ export const profile: Profile = {
     {
       emoji: "👗",
       title: "Fashion Design Collection",
-      desc: "Original garment designs from sketch to finished piece.",
+      desc: "I used HTML to organize my sketches and CSS to style the layout, learning how to connect technology with fashion design.",
       tag: "Fashion",
     },
     {
