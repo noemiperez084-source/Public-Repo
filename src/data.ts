@@ -18,11 +18,11 @@ export const profile: Profile = {
   tagline: "Fashion Designer | Photographer | Photo & Video Editor",
   roles: ["Fashion Designer", "Photographer", "Content Creator"],
   avatar: {
-    src: "/images/1F938409-2DC1-417F-91E4-B2D9ECB8FA5Amayra.jpg",
+    src: "/images/mayra.jpg",
     alt: "Photo of Mayra",
   },
   about:
-    "I am a creative person passionate about fashion design, photography, and digital editing. I enjoy learning new skills, creating unique projects, and expressing my ideas through art and technology.",
+    "I am a creative person passionate about fashion design, photography, and digital editing. I enjoy learning new skills, creating unique projects, and expressing my ideas through art and technology. Thanks to Tech Teen Launchpad, I have consolidated my interest in technology.",
   skills: [
     { emoji: "🎨", label: "Adobe Photoshop", level: 90 },
     { emoji: "📸", label: "Photography", level: 88 },
